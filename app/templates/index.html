@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{title}}</title>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title> Welcome to NEWS API </title>
+    {% endif %}
 </head>
 <body>
-    <h1>Welcome to NEWS API</h1>
-    <h2><i>{{statement}}</i></h2>
+    <h1>WELCOME TO NEWS API</h1>
+    <h2><i>{{ statement }}</i></h2>
+    <h3>NEWS Highlights Today</h3>
+    
 </body>
 </html>
