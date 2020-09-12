@@ -10,3 +10,11 @@ def index():
     title = 'NEWS API'
     statement = '"Never miss out on the highlights"'
     return render_template('index.html',title = title,statement = statement)
+
+
+@app.route('/topic/<topic_id>')
+def topic(topic_id):
+    '''
+    View topic page fuction that returns the topic details page and its data 
+    '''
+    return render_template('topic.html',id = topic_id)
