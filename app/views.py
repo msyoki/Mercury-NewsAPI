@@ -12,9 +12,9 @@ def index():
     return render_template('index.html',title = title,statement = statement)
 
 
-@app.route('/topic/<topic_id>')  
-def topic(topic_id):
+@app.route('/articles/<sources_id>')  
+def topic(sources_id):
     '''
     View topic page fuction that returns the topic details page and its data 
     '''
-    return render_template('topic.html',id = topic_id)
+    return render_template('topic.html',id = sources_id)
