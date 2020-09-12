@@ -13,16 +13,18 @@
 <body>
     <h1>WELCOME TO NEWS API</h1>
     <h2><i>{{ statement }}</i></h2>
-    <h3>NEWS Highlights Today</h3>
+    <h3>NEWS SOURCES</h3>
     {%  for source in sources %}
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"> 
-            <a href="/articles/{{ source.id  }}"><h1>  {{  source.name }}</h1></a>
-            <div>
-                <p> <strong> Description:</strong><br>{{source.description|truncate(150)}}</p>
-            </div>
-            <h3> category: {{ source.category}}</h3>
+    <hr>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 "> 
+        <a href="/articles/{{ source.id  }}"><h1>{{  source.name }}</h1></a>
+        <div>
+            <p> <strong> Description:</strong><br>{{source.description|truncate(150)}}</p>
         </div>
-{%  endfor %}
+        <h3> category: {{ source.category}}</h3>
+    </div>
+    
+    {%  endfor %}
 
     
 </body>
