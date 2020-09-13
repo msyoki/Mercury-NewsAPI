@@ -11,11 +11,19 @@ class SourceTest(unittest.TestCase):
         '''
         setup method that will run before every test
         '''
-        self.new_source = Source('abc-news','ABC News','Your trusted source for breaking news, analysis, exclusive interviews, headlines, and videos at ABCNews.com.','https://abcnews.go.com','general')
+        self.news_source = Source('al-jazeera-english','Al Jazeera English','News, analysis from the Middle East and worldwide...','http://www.aljazeera.com','general')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.new_source,Source))
+        self.assertTrue(isinstance(self.news_source,Source))
 
-
+    def test_init(self):
+        """
+        Test case to check if the Source class is initialised
+        """
+        self.assertEqual( self.news_source.id, 'al-jazeera-english')
+        self.assertEqual( self.news_source.name, 'Al Jazeera English')
+        self.assertEqual( self.news_source.description, 'News, analysis from the Middle East and worldwide...')
+        self.assertEqual( self.news_source.url, 'http://www.aljazeera.com')
+        self.assertEqual( self.news_source.category, 'general')
 if __name__ == '__main__':
     unittest.main()
