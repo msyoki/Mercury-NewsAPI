@@ -1,34 +1,25 @@
 {%  extends 'base.html' %}
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
 <!-- Content Block -->
 {%  block content %}
     <h1 style="font-weight: bolder;">WELCOME TO NEWS API</h1>
     <br>
     {%  for source in sources %}
-        <!-- <hr>
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
-            <a href="/articles/{{ source.id  }}"><h1>{{ source.name }}</h1></a>
-            <div>
-                <p> <strong> Description:</strong><br>{{source.description|truncate(300)}}</p>
-            </div>
-            <h3> category: {{ source.category}}</h3>
-        </div> -->
 
-        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ">
-            
-            <div class="card" style="width: 40rem;">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 "> 
+            <div class="card" style="width: 35rem;">
                 <div class="card-body">
-                <a class="card-title" href="/articles/{{ source.id  }}"><h1 >{{ source.name }}</h1></a>
-                <hr>
-                <p class="card-text"><strong> Description:</strong><br>{{source.description|truncate(300)}}</p>
-                <h5 class="card-text">category: {{ source.category}}</h5>
+                    <a class="card-title" href="/articles/{{ source.id  }}"><h1 >{{ source.name }}</h1></a>
+                    <hr>
+                    <p class="card-text"><strong> Description:</strong><br>{{source.description|truncate(300)}}</p>
+                    <h5 class="card-text">category: {{ source.category}}</h5>
                 </div>
             </div>
         </div>
-
-
-
-
-
 
     {%  endfor %}
 {%  endblock %}
