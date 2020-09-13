@@ -2,8 +2,8 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
     padding: 25px;
-    column-width: auto;
-    line-height: normal;
+    width: 100%;
+    line-height: inherit;
     border-radius: 25px;
     margin: 15px;
     
@@ -16,4 +16,9 @@ h1{
 
 h3{
     font-weight: bolder;
+
+}
+
+.container{
+    padding: 10px;
 }
