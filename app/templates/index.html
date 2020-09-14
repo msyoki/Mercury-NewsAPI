@@ -3,14 +3,27 @@
 {% block styles%}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Bungee+Inline&family=Faster+One&family=Fredericka+the+Great&display=swap" rel="stylesheet">
 {% endblock %}
 <!-- Content Block -->
 {%  block content %}
-    <h1 style="font-weight: bolder;">WELCOME TO MERCURY<br>News_API</h1>
-    <hr>
-    {%  for source in sources %}
 
-    <div class="container col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"> 
+    <div class="hero-image">
+        <div class="hero-text">
+        <h1>WELCOME TO <span> MERCURY</span><br>News_API</h1>
+        <h4><i>"Never miss out on the highlights"</i></h4>
+        <hr>
+        <br>
+        <a style="color: white;" href="#sources"><button class="btn btn-info" >Read News</button></a>
+        </div>
+    </div>
+    <div id="sources">
+        <h2 style="text-align: center;" style="font-weight: bolder;">SOURCES</h2>
+        <hr>
+    </div>
+    {%  for source in sources %}
+    <div class="container col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" > 
         <div class="card" >
             <div class="card-body">
                 <a class="card-title" href="/articles/{{ source.id  }}"><h3 >{{ source.name }}</h3></a>
