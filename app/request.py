@@ -60,7 +60,7 @@ def get_articles(id):
     Function that gets sources and their articles
     '''
 
-    get_articles_url = "https://newsapi.org/v2/everything?sources={}&apiKey={}".format(id,api_key)
+    get_articles_url = "https://newsapi.org/v2/top-headlines?sources={}&apiKey={}".format(id,api_key)
 
 
     with urllib.request.urlopen(get_articles_url) as url:
