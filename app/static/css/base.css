@@ -6,6 +6,8 @@ body, html {
 .navbar{
     margin: 0;
     border-color: white;
+    padding: 20px;
+    opacity: 0.9;
 
     
 }
