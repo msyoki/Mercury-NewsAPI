@@ -8,7 +8,7 @@
 {% endblock %}
 <!-- Content Block -->
 {%  block content %}
-
+    <!--Header hero image-->
     <div class="hero-image">
         <div class="hero-text">
         <h1>WELCOME TO <span> MERCURY</span><br>News_API</h1>
@@ -22,6 +22,8 @@
         <h2 style="text-align: center;" style="font-weight: bolder;">SOURCES</h2>
         <hr>
     </div>
+
+    <!-- News Sources  -->
     {%  for source in sources %}
     <div class="container col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" > 
         <div class="card" >
