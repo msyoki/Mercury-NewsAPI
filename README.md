@@ -1,4 +1,4 @@
-# NewsAPI
+# MERCURY NEWSAPI
 
 > This application lists various sources of news and subsequent highlights in each of the source. clicking an individual highlights takes the user to the article itself for the full story
 
@@ -18,12 +18,8 @@
 > * Flask framework
 > * Bootstrap
 
-## Dependancy Installments
-
-> * pip install python3.8
-> * pip install flask 
-> * pip install flask-bootstrap
-
+## Deployment environment
+> * Heruko
 
 ## User Stories
 
@@ -34,16 +30,6 @@ As a user I would like:
 > * to see the image, description and time the news article was created.
 > * to click on Readmore and read it fully from the news source.
 
-## Specifications
-
-| Behavior        | Input           | Outcome  |
-| ------------- |:-------------:| -----:|
-| Display News sources | N/A | List of various News sources is displayed |
-| Articles from selected News source | **Click** a News source | Directed to a page with a list of articles from the selected source |
-| Display image, description, title and date of publish | N/A | An articles image, title, description and date of publication are displayed |
-| Read an entire article | **Click** on an readmore button | Directed to the source's site to read the entire article |
-
-
 ## Known Bugs
 
 > None at the moment,please contact incase of any trouble.
@@ -52,7 +38,7 @@ As a user I would like:
 
 > MIT License
 
-> Copyright (c) 2018 **Musyoki Mutua**
+> Copyright (c) 2020 **Musyoki Mutua**
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
