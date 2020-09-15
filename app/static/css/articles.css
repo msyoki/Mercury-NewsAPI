@@ -3,12 +3,14 @@ h1{
     text-align: center;
     font-weight: bolder;
     padding-top: 20px;
+
     
 }
 
 h2{
     font-family: 'Fredericka the Great', cursive;
     text-align: center;
+
 }
 
     
@@ -20,16 +22,23 @@ h4, h5 {
 
 .card-body{
     text-align: center;
-    padding: 20px;
+    padding: 30px;
 
 }
 .card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 20px;
     line-height: inherit;
-    height: 480px;
+    height: 600px;
+    border-radius: 25px;
+    background-color: white;
 }
 
 hr{
     width: 60%;
+    opacity: 0.5;
+}
+
+i{
+    font-weight: bold;
 }
