@@ -14,7 +14,7 @@ class ProdConfig(Config):
     '''
     Production configuration child class 
     '''
-    pass
+    DEBUG=True
 
 class DevConfig(Config):
     '''
