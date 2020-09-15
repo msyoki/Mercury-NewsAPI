@@ -1,7 +1,6 @@
 import unittest
-from app.models import source
+from app.models import Source
 
-Source = source.Source
 
 class SourceTest(unittest.TestCase):
     '''
@@ -25,5 +24,3 @@ class SourceTest(unittest.TestCase):
         self.assertEqual( self.news_source.description, 'News, analysis from the Middle East and worldwide...')
         self.assertEqual( self.news_source.url, 'http://www.aljazeera.com')
         self.assertEqual( self.news_source.category, 'general')
-if __name__ == '__main__':
-    unittest.main()

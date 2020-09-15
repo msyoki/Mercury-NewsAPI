@@ -1,7 +1,6 @@
 import unittest
-from app.models import article
+from app.models import Article
 
-Article = article.Article
 
 class ArticleTest(unittest.TestCase):
     '''
@@ -31,7 +30,5 @@ class ArticleTest(unittest.TestCase):
         self.assertEqual( self.news_article.url, 'http://www.bbc.co.uk/news/world-middle-east-54134869')
 
 
-if __name__ == '__main__':
-    unittest.main()
 
 
