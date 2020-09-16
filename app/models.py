@@ -25,4 +25,14 @@ class Article:
         self.description = description
         self.url = url
         
-        
+class Headlines:
+    '''
+    Class that instantiates objects of the headlines categories objects of the news sources
+    '''
+    def __init__(self,author,description,publishedAt,url,urlToImage,title):
+        self.author = author
+        self.description = description
+        self.publishedAt = publishedAt
+        self.url = url
+        self.urlToImage = urlToImage
+        self.title = title      
