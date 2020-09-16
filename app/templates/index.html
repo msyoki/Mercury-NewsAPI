@@ -41,8 +41,11 @@
             <div class="card-body">
                 <a class="card-title" href="/articles/{{ source.id  }}"><h3 >{{ source.name }}</h3></a>
                 <hr>
-                <p class="card-text"><strong> Description:</strong><br>{{source.description|truncate(300)}}</p>
-                <h5 class="card-text"><strong>category: {{ source.category}}</strong></h5>
+                <p class="card-text text-muted"><strong> Description:</strong><br>{{source.description|truncate(200)}}</p>
+                <h5 class="card-text"></h5>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted"><strong>category:{{ source.category}}</strong></small>
             </div>
         </div>
     </div>
