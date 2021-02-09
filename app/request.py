@@ -1,40 +1,16 @@
-import urllib.request,json
+from urllib.request import urlopen
+import json
 from .models import Source,Article,Category
 
 
-# Getting api key 
-api_key = None
-
-# Getting the source base url
-base_url = None
-
-# Getting source url
-cat_url= None
-
-
 def configure_request(app):
-    global api_key,base_url,cat_url
-    api_key = app.config['NEWS_API_KEY']
+    global api_key,art_url,base_url,cat_url,p_url
+    api_key = app.config['NEWS_API_KEY']         
     base_url = app.config['NEWS_API_BASE_URL']
+    art_url = app.config['ARTICLE_API_URL']
     cat_url= app.config['CAT_API_URL']
 
-def get_sources(category):
-    '''
-    Function that gets news sources list from the News API
-    '''
-    get_sources_url=base_url.format(category,api_key)
 
-    with urllib.request.urlopen(get_sources_url) as url:
-        get_sources_data=url.read()
-        get_sources_response=json.loads(get_sources_data)
-
-        sources_results = None
-
-        if get_sources_response["sources"]:
-            sources_results_list = get_sources_response["sources"]
-            sources_results = process_results(sources_results_list)
-
-    return sources_results
 
 def process_results(sources_list):
     '''
@@ -61,26 +37,23 @@ def process_results(sources_list):
 
     return source_results
 
-def get_articles(id):
+def get_sources(category):
     '''
-    Function that gets sources and their articles
+    Function that gets news sources list from the News API
     '''
+    get_sources = base_url.format(category,api_key)
 
-    get_articles_url = "https://newsapi.org/v2/top-headlines?sources={}&apiKey={}".format(id,api_key)
+    with urlopen(get_sources) as url:
+        data = url.read()
+        response=json.loads(data)
 
+        sources_results = None
 
-    with urllib.request.urlopen(get_articles_url) as url:
-        get_articles_data = url.read()
-        get_articles_response = json.loads(get_articles_data)
+        if  response["sources"]:
+            sources_list = response["sources"]
+            sources_results = process_results(sources_list)
 
-        articles_results = None
-
-        if get_articles_response['articles']:
-            articles_results_list = get_articles_response['articles']
-            articles_results = process_articles(articles_results_list)
-
-    return articles_results
-
+    return sources_results
 
 def process_articles(article_list):
     """
@@ -105,19 +78,46 @@ def process_articles(article_list):
 
     return article_results
 
+def get_articles(id):
+    '''
+    Function that gets sources and their articles
+    '''
+
+    articles_url = art_url.format(id,api_key)
+
+
+    with urlopen(articles_url) as url:
+        data = url.read()
+        response = json.loads(data)
+
+        articles_results = None
+
+        if  response['articles']:
+            articles_list = response['articles']
+            articles_results = process_articles(articles_list)
+
+    return articles_results
+
+
+
+
 def get_category(cat_name):
     '''
     function that gets the response to the category json
     '''
-    get_category_url = cat_url.format(cat_name,api_key)
-    with urllib.request.urlopen(get_category_url) as url:
-        get_category_data = url.read()
-        get_cartegory_response = json.loads(get_category_data)
+    category_url = cat_url.format(cat_name,api_key)
+    with urlopen(category_url) as url:
+        data = url.read()
+        response = json.loads(data)
 
-        get_cartegory_results = None
+        cartegory_results = None
 
-        if get_cartegory_response['articles']:
-            get_cartegory_list = get_cartegory_response['articles']
-            get_cartegory_results = process_articles(get_cartegory_list)
+        if response['articles']:
+            cartegory_list = response['articles']
+            cartegory_results = process_articles(cartegory_list)
 
-    return get_cartegory_results
+    return cartegory_results
+
+
+
+

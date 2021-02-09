@@ -26,16 +26,19 @@ h4 {
 }
 .card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    margin-bottom: 20px;
     line-height: inherit;
-    height: 650px;
-    border-radius: 25px;
+    height: 580px;
     background-color: white;
-    clear: both;
+    margin-bottom: 20px;
     width: 400px;
 }
 
-
+@media screen and (max-width :900px){
+    .card{
+        margin-left: 20px;
+        
+    }
+}
 .card-img-top {
     width: 400px;
     height: 260px;

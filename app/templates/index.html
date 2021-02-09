@@ -1,54 +1,57 @@
 {%  extends 'base.html' %}
-
-{% block styles%}
-    {{ super() }}
-    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
-    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Bungee+Inline&family=Faster+One&family=Fredericka+the+Great&display=swap" rel="stylesheet">
-{% endblock %}
-<!-- Content Block -->
 {%  block content %}
+    {% block styles%}
+        {{ super() }}
+        <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+        <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Bungee+Inline&family=Faster+One&family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    {% endblock %}
+<!-- Content Block -->
+
     <!--Header hero image-->
+
     <div class="hero-image">
         <div class="hero-text">
-        <h1>WELCOME TO <span> MERCURY</span></h1>
-        <h3>(News_API)</h3>
+        <h1>  <span>// MERCURY </span>NEWS //</h1>
+        <h3>(<small style="color: white;">Powered by </small> News API)</h3>
         <h4><i>"Never miss out on the highlights"</i></h4>
         <hr class="style-six">
         <br>
-        <a style="color: white;" href="#sources"><button class="btn btn-info" >NEWS SOURCES</button></a>
+        <a  href="#sources"><button class="btn btn-warning" style="color: #333;" >NEWS SOURCES</button></a>
         </div>
     </div>
+
+
     <div id="about">
         <h3 >About News APIs</h3>
         
         <p > 
-        A news api provides live headlines, images, and other article metadata from a range 
+        A Mercury News provides live headlines, images, and other article metadata from a range 
         of popular news sources and blogs. The service provides data from over 30,000 news sources
         and blogs in more than 55 countries. including TechCrunch, Reuters, NYT, WSJ, and BBC News
         </p>
+      
         
-    </div><br><br><br>
+    </div>
+    <br><br>
+
     <div id="sources">
-        <h2 style="text-align: center;" style="font-weight: bolder;">SOURCES</h2>
-        <hr>
+        <h2 style="text-align: center;" style="font-weight: bolder;"><span style="color: white;">SOURCES</span> </h2>
     </div>
-
     <!-- News Sources  -->
-    {%  for source in sources %}
-    <div class="container col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4" > 
-        <div class="card" >
-            <div class="card-body">
-                <a class="card-title" href="/articles/{{ source.id  }}"><h3 >{{ source.name }}</h3></a>
-                <hr>
-                <p class="card-text text-muted"><strong> Description:</strong><br>{{source.description|truncate(200)}}</p>
-                <h5 class="card-text"></h5>
+    <div class="container"  > 
+        {%  for source in sources %}
+        <div class="btn btn-warning btn-lg" >
+            <a href="/articles/{{ source.id  }}" style="text-decoration: none;">
+            <div >
+                <h4 class="change">{{ source.name }}</h4>
+                <!-- <small class="card-text text-muted"><strong> Description:</strong><br>{{source.description|truncate(200)}}</small>
+                <h5 class="card-text"></h5> -->
+                <!-- <small class="text-muted change"><strong>category:{{ source.category}}</strong></small> -->
             </div>
-            <div class="card-footer">
-                <small class="text-muted"><strong>category:{{ source.category}}</strong></small>
-            </div>
+            </a>
         </div>
+        {%  endfor %}
     </div>
 
-    {%  endfor %}
 {%  endblock %}
